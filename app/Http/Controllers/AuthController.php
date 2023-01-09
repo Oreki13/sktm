@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Traits\GlobalTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    use GlobalTrait;
     public $logActivity;
 
     public function showLogin()

@@ -25,6 +25,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/pengajuan-sktm', [PengajuanSktmController::class, 'create']);
 Route::post('/pengajuan-sktm', [PengajuanSktmController::class, 'store']);
 Route::get('/check-status/{nik}', [PengajuanSktmController::class, 'checkStatusByNik']);
+Route::get('/check/{id}', [PengajuanSktmController::class, 'showNotAdmin']);
 
 Route::middleware(['auth'])->group(function () {
 

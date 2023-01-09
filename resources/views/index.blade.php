@@ -41,10 +41,11 @@
                     if (res.code == 404) {
                         showAlert('Failed', 'NIK tidak ditemukan', 'error', 'OK');
                     } else if (res.code == 200) {
-                        const status = res.status == 0 ? 'Pengajuan SKTM anda masih dalam proses' : res
-                            .status == 1 ? 'Selamat pengajuan SKTM anda diterima' :
-                            'Mohon maaf pengajuan SKTM anda di tolak'
-                        showAlert('Success', status, 'info', 'OK');
+                        // const status = res.status == 0 ? 'Pengajuan SKTM anda masih dalam proses' : res
+                        //     .status == 1 ? 'Selamat pengajuan SKTM anda diterima' :
+                        //     'Mohon maaf pengajuan SKTM anda di tolak'
+                        // showAlert('Success', status, 'info', 'OK');
+                        window.location.href = '/check/' + res.id;
 
                     }
                 })

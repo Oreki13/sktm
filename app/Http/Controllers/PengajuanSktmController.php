@@ -160,7 +160,8 @@ class PengajuanSktmController extends Controller
         if ($data) {
             return response()->json([
                 'code' => 200,
-                'status' => $data->status
+                'status' => $data->status,
+                'id' => $data->id
             ]);
         } else {
             return response()->json([
@@ -168,5 +169,19 @@ class PengajuanSktmController extends Controller
                 'status' => '-'
             ]);
         }
+    }
+    public function showNotAdmin($id)
+    {
+        $data = PengajuanSktm::where('id', $id)->first();
+        // dd($data);
+        $bgColorStatus = '';
+        if ($data->status == 0) {
+            $bgColorStatus = 'bg-blue-600';
+        } else if ($data->status == 1) {
+            $bgColorStatus = 'bg-green-600';
+        } else if ($data->status == 2) {
+            $bgColorStatus = 'bg-red-600';
+        }
+        return view('check', ['data' => $data, 'bgColorStatus' => $bgColorStatus]);
     }
 }

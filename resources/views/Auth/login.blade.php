@@ -5,11 +5,10 @@
 
             <h1 class="text-center font-bold text-2xl">Masuk Admin</h1>
             <form class="mt-7" method="POST" action="/login">
+                @csrf
                 @error('credential')
                     <div class="mb-5 rounded text-white px-3 py-2 bg-red-700">{{ $message }}</div>
                 @enderror
-                @csrf
-
                 <div class="flex flex-col">
                     <label>Username</label>
                     <input name='username' type="text" class="bg-gray-200 rounded-sm p-2 focus:outline-gray-400 mt-1" />

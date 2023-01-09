@@ -22,7 +22,6 @@
         </div>
         <form class="mt-10" method="POST" action="/admin/pengajuan-sktm/update/{{ $data->id }}" id="formPengajuan">
             @csrf
-            {{-- {{ $data }} --}}
             <input type="text" class="hidden" name="status" value="{{ $data->status }}" />
             <div class="flex w-full">
                 <div class="flex flex-col w-full justify-between">

@@ -1,6 +1,5 @@
 <header class="bg-white">
     <div class="flex justify-between mx-auto py-5  max-w-screen-xl">
-
         <div>
             @if (str_contains(Request::path(), 'admin'))
                 <a href="/admin" class="text-2xl font-bold">
